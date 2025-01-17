@@ -1,0 +1,220 @@
+/* styles.css */
+
+/* إعادة ضبط */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('LASTT1.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(179, 17, 17);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* صورة جانبية */
+.side-image {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 280px;
+    opacity: 0.85;
+    transform: translateY(-50%);
+}
+
+.side-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* تعتيم الخلفية */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* طبقة شفافة */
+    z-index: 1;
+}
+
+/* قائمة التنقل */
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #820000;
+}
+
+/* المحتوى */
+.content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 70px;
+    letter-spacing: 4px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 24px;
+    margin: 20px 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #820000;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background: #4b0707;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+/* النصوص الإضافية */
+.info {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 2;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width: 1024px) {
+    .side-image {
+        width: 200px;
+    }
+
+    .title {
+        font-size: 60px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* استجابة الشاشات الصغيرة جداً */
+@media (max-width: 768px) {
+    .side-image {
+        width: 150px;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* استجابة الهواتف الذكية */
+@media (max-width: 480px) {
+    .side-image {
+        width: 120px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
